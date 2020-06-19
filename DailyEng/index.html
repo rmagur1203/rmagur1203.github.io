@@ -59,10 +59,10 @@
                 console.log(id);
                 if (data == keys[id]) {
                     answerCount++;
+                    $('[data-toggle="tooltip"]').tooltip("show");
                 }
                 let container = document.getElementsByClassName("container")[0];
                 container.classList.value = "container p-3 " + (data == keys[id] ? "bg-success" : "bg-danger") + " text-white";
-                $('[data-toggle="tooltip"]').tooltip("show");
                 setTimeout(() => {
                     let container = document.getElementsByClassName("container")[0];
                     container.classList.value = "container p-3 bg-dark text-white";

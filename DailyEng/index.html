@@ -62,7 +62,7 @@
                 }
                 let container = document.getElementsByClassName("container")[0];
                 container.classList.value = "container p-3 " + (data == keys[id] ? "bg-success" : "bg-danger") + " text-white";
-                $('[data-toggle="tooltip"]').tooltip("toggle");
+                $('[data-toggle="tooltip"]').tooltip({delay: {hide: 1000}});
                 setTimeout(() => {
                     let container = document.getElementsByClassName("container")[0];
                     container.classList.value = "container p-3 bg-dark text-white";

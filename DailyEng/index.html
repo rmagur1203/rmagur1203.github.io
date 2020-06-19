@@ -61,7 +61,7 @@
                 }
                 LoadWord();
                 let container = document.getElementsByClassName("container")[0];
-                container.classList.value = "container p-3 bg-danger text-white";
+                container.classList.value = "container p-3 " + data == keys[id] ? "bg-success" : "bg-danger" + " text-white";
                 setTimeout((container) => {
                     container.classList.value = "container p-3 bg-dark text-white";
                 }, 500, container);

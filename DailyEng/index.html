@@ -28,7 +28,7 @@
                         json[getRandomInt(1, 3001)],
                         data
                     ]);
-                    container.innerHTML = `<h1 data-toggle="popover" title="정답" data-content="${data.뜻}" >${data.단어}</h1>`;
+                    container.innerHTML = `<p style="font-size: 2.5rem;" data-toggle="popover" title="정답" data-content="${data.뜻}" >${data.단어}</p>`;
                     container.innerHTML += `<h2>맞춘 수: ${answerCount}</h2>`;
                     for (let i = 0;i < keys.length;i++){
                         container.innerHTML += "<div class=\"form-check\">";

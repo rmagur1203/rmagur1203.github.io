@@ -60,7 +60,7 @@
                     answerCount++;
                 }
                 let container = document.getElementsByClassName("container")[0];
-                container.classList.value = "container p-3 " + data == keys[id] ? "bg-success" : "bg-danger" + " text-white";
+                container.classList.value = "container p-3 " + (data == keys[id] ? "bg-success" : "bg-danger") + " text-white";
                 $('[data-toggle="popover"]').popover();
                 setTimeout((container) => {
                     container.classList.value = "container p-3 bg-dark text-white";

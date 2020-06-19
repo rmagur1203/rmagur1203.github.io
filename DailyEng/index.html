@@ -14,13 +14,6 @@
             answerCount = 0;
             $(document).ready(function () {
                 LoadWord();
-                $('#form-check-input').click(function () {
-                    let id = $(this).id;
-                    if (data == keys[id]) {
-                        answerCount++;
-                        LoadWord();
-                    }
-                });
             });
             function LoadWord() {
                 $.getJSON("words.json", function(json) {
@@ -44,6 +37,13 @@
                         container.innerHTML += "</label>";
                         container.innerHTML += "</div>";
                     }
+                    $('.form-check-input').click(function () {
+                        let id = $(this).id;
+                        if (data == keys[id]) {
+                            answerCount++;
+                            LoadWord();
+                        }
+                    });
                 });
             }
         </script>

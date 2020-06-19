@@ -31,19 +31,12 @@
                     container.innerHTML += `<h2>맞춘 수: ${answerCount}</h2>`;
                     for (let i = 0;i < keys.length;i++){
                         container.innerHTML += "<div class=\"form-check\">";
-                        container.innerHTML += `<label id="${i}" class=\"form-check-label\">`;
-                        container.innerHTML += `<label id="${i}" class=\"form-check-label\">`;
-                        container.innerHTML += `<input type="radio" id="${i}" class="form-check-input" name="optradio">${keys[i].뜻}`;      
+                        container.innerHTML += `<label class=\"form-check-label\">`;
+                        container.innerHTML += `<label class=\"form-check-label\">`;
+                        container.innerHTML += `<input type="radio" id="${i}" class="form-check-input" click="checkAnswer();" name="optradio">${keys[i].뜻}`;      
                         container.innerHTML += "</label>";
                         container.innerHTML += "</div>";
                     }
-                    $('.form-check-input').click(function () {
-                        let id = this.id;
-                        if (data == keys[id]) {
-                            answerCount++;
-                            LoadWord();
-                        }
-                    });
                 });
             }
         </script>
@@ -59,6 +52,13 @@
                     [a[i], a[j]] = [a[j], a[i]];
                 }
                 return a;
+            }
+            function checkAnswer(){
+                let id = this.id;
+                if (data == keys[id]) {
+                    answerCount++;
+                    LoadWord();
+                }
             }
         </script>
     </body>

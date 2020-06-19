@@ -16,13 +16,22 @@
                 let container = document.getElementsByClassName("container")[0];
                 let name = document.getElementsByTagName("h1")[0];
                 let data = json[getRandomInt(1, 3001)];
+                let keys = shuffle([
+                    json[getRandomInt(1, 3001)].뜻,
+                    json[getRandomInt(1, 3001)].뜻,
+                    json[getRandomInt(1, 3001)].뜻,
+                    json[getRandomInt(1, 3001)].뜻,
+                    data.뜻
+                ]);
                 container.innerHTML = `<h1>${data.단어}</h1>`;
-                container.innerHTML += "<div class=\"form-check\">";
-                container.innerHTML += "<label class=\"form-check-label\">";
-                container.innerHTML += "<label class=\"form-check-label\">";
-                container.innerHTML += `<input type="radio" class="form-check-input" name="optradio">Option 1`;      
-                container.innerHTML += "</label>";
-                container.innerHTML += "</div>";
+                for (let i = 0;i < keys.length;i++){
+                    container.innerHTML += "<div class=\"form-check\">";
+                    container.innerHTML += "<label class=\"form-check-label\">";
+                    container.innerHTML += "<label class=\"form-check-label\">";
+                    container.innerHTML += `<input type="radio" class="form-check-input" name="optradio">${keys[i].뜻}`;      
+                    container.innerHTML += "</label>";
+                    container.innerHTML += "</div>";
+                }
             });
         </script>
         <script>
@@ -30,6 +39,13 @@
                 min = Math.ceil(min);
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+            }
+            function shuffle(a) {
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
             }
         </script>
     </body>

@@ -27,7 +27,7 @@
                         json[getRandomInt(1, 3001)],
                         data
                     ]);
-                    container.innerHTML = `<h1>${data.단어}</h1>`;
+                    container.innerHTML = `<h1 data-toggle="popover" title="정답" data-content="${data.뜻}" >${data.단어}</h1>`;
                     container.innerHTML += `<h2>맞춘 수: ${answerCount}</h2>`;
                     for (let i = 0;i < keys.length;i++){
                         container.innerHTML += "<div class=\"form-check\">";
@@ -59,12 +59,13 @@
                 if (data == keys[id]) {
                     answerCount++;
                 }
-                LoadWord();
                 let container = document.getElementsByClassName("container")[0];
                 container.classList.value = "container p-3 " + data == keys[id] ? "bg-success" : "bg-danger" + " text-white";
+                $('[data-toggle="popover"]').popover();
                 setTimeout((container) => {
                     container.classList.value = "container p-3 bg-dark text-white";
-                }, 500, container);
+                    LoadWord();
+                }, 1000, container);
             }
         </script>
     </body>

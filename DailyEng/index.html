@@ -58,8 +58,13 @@
                 console.log(id);
                 if (data == keys[id]) {
                     answerCount++;
-                    LoadWord();
                 }
+                LoadWord();
+                let container = document.getElementsByClassName("container")[0];
+                container.classList.value = "container p-3 bg-danger text-white";
+                setTimeout((container) => {
+                    container.classList.value = "container p-3 bg-dark text-white";
+                }, 500, container);
             }
         </script>
     </body>

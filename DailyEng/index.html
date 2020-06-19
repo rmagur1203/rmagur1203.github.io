@@ -7,32 +7,44 @@
     </head>
     <body>
         <div class="container p-3 bg-dark text-white">
-            <h1>My First Bootstrap Page</h1>
-            <p>This is some text.</p>
+            <h1>단어를 불러오고 있습니다.</h1>
         </div>
         <h1></h1>
         <script>
-            $.getJSON("words.json", function(json) {
-                let container = document.getElementsByClassName("container")[0];
-                let name = document.getElementsByTagName("h1")[0];
-                let data = json[getRandomInt(1, 3001)];
-                let keys = shuffle([
-                    json[getRandomInt(1, 3001)].뜻,
-                    json[getRandomInt(1, 3001)].뜻,
-                    json[getRandomInt(1, 3001)].뜻,
-                    json[getRandomInt(1, 3001)].뜻,
-                    data.뜻
-                ]);
-                container.innerHTML = `<h1>${data.단어}</h1>`;
-                for (let i = 0;i < keys.length;i++){
-                    container.innerHTML += "<div class=\"form-check\">";
-                    container.innerHTML += "<label class=\"form-check-label\">";
-                    container.innerHTML += "<label class=\"form-check-label\">";
-                    container.innerHTML += `<input type="radio" class="form-check-input" name="optradio">${keys[i].뜻}`;      
-                    container.innerHTML += "</label>";
-                    container.innerHTML += "</div>";
-                }
+            answerCount = 0;
+            $(document).ready(function () {
+                $('#form-check-input').click(function () {
+                    let id = $(this).id;
+                    if (data == keys[id]) {
+                        answerCount++;
+                        LoadWord();
+                    }
+                });
             });
+            function LoadWord() {
+                $.getJSON("words.json", function(json) {
+                    let container = document.getElementsByClassName("container")[0];
+                    let name = document.getElementsByTagName("h1")[0];
+                    data = json[getRandomInt(1, 3001)];
+                    keys = shuffle([
+                        json[getRandomInt(1, 3001)],
+                        json[getRandomInt(1, 3001)],
+                        json[getRandomInt(1, 3001)],
+                        json[getRandomInt(1, 3001)],
+                        data
+                    ]);
+                    container.innerHTML = `<h1>${data.단어}</h1>`;
+                    container.innerHTML = `<h1>맞춘 수: ${answerCount}</h1>`;
+                    for (let i = 0;i < keys.length;i++){
+                        container.innerHTML += "<div class=\"form-check\">";
+                        container.innerHTML += "<label class=\"form-check-label\">";
+                        container.innerHTML += "<label class=\"form-check-label\">";
+                        container.innerHTML += `<input type="radio" id="${i}" class="form-check-input" name="optradio">${keys[i].뜻}`;      
+                        container.innerHTML += "</label>";
+                        container.innerHTML += "</div>";
+                    }
+                });
+            }
         </script>
         <script>
             function getRandomInt(min, max) {

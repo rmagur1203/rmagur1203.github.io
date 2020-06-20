@@ -26,7 +26,8 @@
                 color: black;
             }
             .disable {
-                background-color: #dbdbdb;
+                background-color: #666666;
+                border : 3px solid #666666;
             }
             #Correct {
                 line-height:120px;
@@ -132,6 +133,7 @@
             return a;
         }
         function checkAnswer(sender){
+            if (sender.classList.contains("disable")) return;
             let id = sender.id;
             console.log(id);
             if (data == keys[id]) {
@@ -142,12 +144,11 @@
             }
             let container = document.getElementById("container");
             container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");
-            $("a#button").addClass("disable");
+            $("a.button").addClass("disable");
             setTimeout(() => {
                 let container = document.getElementById("container");
                 container.style.backgroundColor = "";
                 $('[data-toggle="tooltip"]').tooltip("hide");
-                $("a#button").removeClass("disable");
                 LoadWord();
             }, 2000);
         }

@@ -43,9 +43,11 @@
          }
          body {
             font-family: 'Nanum Gothic', sans-serif;
-            background-color: rgb(66, 66, 66);
+            background-color: rgb(66, 66, 66)!important;
          }
       </style>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    </head>
    <body>
       <div id="container">
@@ -138,7 +140,7 @@
             container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");
             setTimeout(() => {
                 let container = document.getElementById("container");
-                container.style.backgroundColor = "#F0F0F0";
+                container.style.backgroundColor = "";
                 //$('[data-toggle="tooltip"]').tooltip("hide");
                 LoadWord();
             }, 2000);

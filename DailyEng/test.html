@@ -98,7 +98,7 @@
                     data
                 ]);
                 keys.push({뜻:"모릅니다."});
-                container.innerHTML = `<div id="wordCard">${data.단어}</div>`;
+                container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="${data.뜻}">${data.단어}</div>`;
                 container.appendChild(answers);
                 let answerhtml = "";
                 answerhtml = "<center>";
@@ -127,19 +127,19 @@
         }
         function checkAnswer(sender){
             let id = sender.id;
+            console.log(id);
             if (data == keys[id]) {
                 answerCount++;
             }
             else {
-                $('[data-toggle="tooltip"]').tooltip("show");
+                //$('[data-toggle="tooltip"]').tooltip("show");
             }
-            let container = document.getElementsByClassName("container")[0];
-            container.classList.value = "container p-3 " + (data == keys[id] ? "bg-success" : "bg-danger") + " text-white";
-            $("input").prop('disabled', true);
+            let container = document.getElementById("container");
+            container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");
             setTimeout(() => {
-                let container = document.getElementsByClassName("container")[0];
-                container.classList.value = "container p-3 bg-dark text-white";
-                $('[data-toggle="tooltip"]').tooltip("hide");
+                let container = document.getElementById("container");
+                container.style.backgroundColor = "#F0F0F0";
+                //$('[data-toggle="tooltip"]').tooltip("hide");
                 LoadWord();
             }, 2000);
         }

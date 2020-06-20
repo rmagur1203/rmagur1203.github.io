@@ -134,14 +134,14 @@
                 answerCount++;
             }
             else {
-                //$('[data-toggle="tooltip"]').tooltip("show");
+                $('[data-toggle="tooltip"]').tooltip("show");
             }
             let container = document.getElementById("container");
             container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");
             setTimeout(() => {
                 let container = document.getElementById("container");
                 container.style.backgroundColor = "";
-                //$('[data-toggle="tooltip"]').tooltip("hide");
+                $('[data-toggle="tooltip"]').tooltip("hide");
                 LoadWord();
             }, 2000);
         }

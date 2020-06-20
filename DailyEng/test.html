@@ -86,6 +86,7 @@
         </div>
         <script>
         answerCount = $.cookie("score");
+        if (answerCount == undefined) answerCount = 0;
         $(document).ready(function () {
             LoadWord();
         });

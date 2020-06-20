@@ -1,0 +1,150 @@
+<html>
+   <head>
+      <title>단어맞추기</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+      <style>
+         .button {
+         display: inline-block;
+         border : 3px solid white;
+         border-radius:5px;
+         width: 400px;
+         height: 80px;
+         text-align: center;
+         text-decoration: none;
+         line-height: 80px;
+         outline: none;
+         background-color:#fff;
+         font-size:20px;
+         color:black;
+         }
+         .button:hover {
+         border-color:green;
+         color: black;
+         }
+         #Correct {
+         line-height:120px;
+         font-size:70px;
+         text-align:center;
+         color: white;
+         }
+         #container {
+         padding : 20;
+         background-color : F0F0F0;
+         width : 500px;
+         margin : 0 auto;
+         height : 800px;
+         }
+         #wordCard {
+         text-align:center;
+         font-size : 50px;
+         color: white;
+         }
+         body {
+         font-family: 'Nanum Gothic', sans-serif;
+         background-color: rgb(66, 66, 66);
+         }
+      </style>
+   </head>
+   <body>
+      <div id="container">
+         <div id="wordCard">
+            summary	
+         </div>
+         
+         <div id="answers">
+            <center id="buttons">
+               <br/>
+               <br/>
+               <a class="button" onclick="checkAnswer(this);">가정하다</a>
+               <br/>
+               <br/>
+               <a class="button" onclick="checkAnswer(this);">1</a>
+               <br/>
+               <br/>
+               <a class="button" onclick="checkAnswer(this);">요약</a>
+               <br/>
+               <br/>
+               <a class="button" onclick="checkAnswer(this);">맹세하다</a>
+               <br/>
+               <br/>
+               <a class="button" onclick="checkAnswer(this);">공백</a>
+               <br/>
+               <br/>
+               <a class="button" onclick="checkAnswer(this);">모릅니다</a>
+            </center>
+         </div>
+         <div id="Correct">
+            52
+         </div>
+      </div>
+      <script>
+        answerCount = 0;
+        $(document).ready(function () {
+            LoadWord();
+        });
+        function LoadWord() {
+            $.getJSON("words.json", function(json) {
+                let container = document.getElementById("container");
+                let answers = document.createElement("div");
+                answers.id = "answers";
+                data = json[getRandomInt(1, 3001)];
+                keys = shuffle([
+                    json[getRandomInt(1, 3001)],
+                    json[getRandomInt(1, 3001)],
+                    json[getRandomInt(1, 3001)],
+                    json[getRandomInt(1, 3001)],
+                    data
+                ]);
+                keys.push({뜻:"모릅니다."});
+                container.innerHTML = `<div id="wordCard">${data.단어}</div>`;
+                container.appendChild(answers);
+                let answerhtml = "";
+                answerhtml = "<center>";
+                for (let i = 0;i < keys.length;i++){
+                    answerhtml += "<br/>";
+                    answerhtml += "<br/>";
+                    answerhtml += `<a class="button" id="${i}" onclick="checkAnswer(this);">${keys[i].뜻}</a>`;      
+                }
+                answers.innerHTML = answerhtml + "</center>";
+                container.innerHTML += `<div id="Correct">${answerCount}</div>`;
+            });
+        }
+    </script>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        function shuffle(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+        function checkAnswer(sender){
+            let id = sender.id;
+            if (data == keys[id]) {
+                answerCount++;
+            }
+            else {
+                $('[data-toggle="tooltip"]').tooltip("show");
+            }
+            let container = document.getElementsByClassName("container")[0];
+            container.classList.value = "container p-3 " + (data == keys[id] ? "bg-success" : "bg-danger") + " text-white";
+            $("input").prop('disabled', true);
+            setTimeout(() => {
+                let container = document.getElementsByClassName("container")[0];
+                container.classList.value = "container p-3 bg-dark text-white";
+                $('[data-toggle="tooltip"]').tooltip("hide");
+                LoadWord();
+            }, 2000);
+        }
+    </script>
+   </body>
+</html>

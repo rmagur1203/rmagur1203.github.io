@@ -139,9 +139,7 @@
                 answerCount++;
                 $.cookie("score", answerCount);
             }
-            else {
-                $('[data-toggle="tooltip"]').tooltip("show");
-            }
+            $('[data-toggle="tooltip"]').tooltip("show");
             let container = document.getElementById("container");
             container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");
             $("a.button").addClass("disable");

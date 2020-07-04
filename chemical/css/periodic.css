@@ -9,6 +9,13 @@ body {
     text-shadow: none;
 }
 
+.cellsdiv {
+    position: relative;
+    height: 200px;
+    margin-right: -1px;
+    text-shadow: none;
+}
+
 .periodic-row {
     clear: both;
     height: 10%;
@@ -19,6 +26,21 @@ body {
     position: relative;
     width: 5.55%;
     height: 100%;
+}
+
+.emptycell {
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    width: 5.55%;
+    height: 100%;
+}
+
+.copycell {
+    float: left;
+    position: relative;
+    width: 5.55%;
+    height: 10%;
 }
 
 .element {

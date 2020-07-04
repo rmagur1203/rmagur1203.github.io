@@ -897,11 +897,88 @@
         </div>
         <div style="clear: both;"></div>
     </div>
+    <hr>
+    <div class="cellsdiv" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
+
+    </div>
     <script>
-        var cells = document.getElementsByClassName("cell");
-        for (var i = 0; i < cells.length; i++) {
-            if (cells[i].innerHTML != "") {
-                cells[i].draggable = true;
+        window.onload = () => {
+            var cells = document.getElementsByClassName("cell");
+            for (var i = 0; i < cells.length; i++) {
+                if (cells[i].innerHTML != "") {
+                    cells[i].draggable = true;
+
+                    var cell = cells[i].cloneNode(true);
+                    cell.classList = new Array();
+                    cell.classList.add("copycell");
+                    cell.id = i + "cc";
+                    cell.addEventListener("dragstart", dragstart_handler);
+                    var cellsdiv = document.getElementsByClassName("cellsdiv")[0];
+                    cellsdiv.appendChild(cell);
+
+                    var newcell = document.createElement("div");
+                    newcell.classList.add("cell");
+                    newcell.style.border = "0.01px solid black";
+                    newcell.id = i + "ec";
+                    newcell.ondrop = drop_handler;
+                    newcell.ondragover = dragover_handler;
+                    cells[i].outerHTML = newcell.outerHTML;
+                }
+            }
+            for (var j = 0; j < 100; j++) {
+                var cells = document.getElementsByClassName("cell");
+                for (var i = 0; i < cells.length; i++) {
+                    cells[i].ondrop = drop_handler;
+                    cells[i].ondragover = dragover_handler;
+                    cells[i].classList = ["emptycell"];
+                }
+            }
+        }
+    </script>
+    <script>
+        function dragstart_handler(ev) {
+            console.log("dragStart");
+            // 데이터 전달 객체에 대상 요소의 id를 추가합니다.
+            ev.dataTransfer.setData("text/plain", ev.target.id);
+            console.log(ev.target.id);
+            ev.dataTransfer.dropEffect = "move";
+        }
+
+        function dragover_handler(ev) {
+            ev.preventDefault();
+            // dropEffect를 move로 설정.
+            ev.dataTransfer.dropEffect = "move";
+        }
+
+        function drop_handler(ev) {
+            ev.preventDefault();
+            // 대상의 id를 가져와 대상 DOM에 움직인 요소를 추가합니다. 
+            const data = ev.dataTransfer.getData("text/plain");
+            var elem = document.getElementById(data);
+            if (elem.parentElement.classList.value == "cellsdiv") {
+                elem.id = elem.id.replace("cc", "c");
+            }
+            if (elem.parentElement.classList.value == "periodic-row") {
+                elem.id = elem.id.replace("c", "cc");
+            }
+            elem.parentElement.removeChild(elem);
+            if (ev.target.classList.value == "cellsdiv") {
+                var node = elem.cloneNode(true);
+                node.classList = ["copycell"];
+                node.addEventListener("dragstart", dragstart_handler);
+                node.ondrop = drop_handler;
+                node.ondragover = dragover_handler;
+                ev.target.appendChild(node);
+            }
+            if (ev.target.parentElement.classList.value == "periodic-row") {
+                var node = elem.cloneNode(true);
+                node.classList = ["cell"];
+                ev.target.outerHTML = node.outerHTML;
+                var newnode = document.getElementById(elem.id);
+                newnode.addEventListener("dragstart", dragstart_handler);
+                newnode.ondrop = drop_handler;
+                newnode.ondragover = dragover_handler;
+                console.log(newnode);
             }
         }
     </script>

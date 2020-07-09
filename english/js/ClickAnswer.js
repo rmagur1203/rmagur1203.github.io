@@ -2,21 +2,24 @@ onspeech = false;
 
 answerCount = $.cookie("score");
 if (answerCount == undefined) answerCount = 0;
-$(document).ready(function() {
-    LoadWord();
-});
+$(document).ready(LoadWord);
+
+const URLSearch = new URLSearchParams(window.location.search);
+wordloc = URLSearch.get("words");
+if (wordloc == null)
+    wordloc = "words.json";
 
 function LoadWord() {
-    $.getJSON("words.json", function(json) {
+    $.getJSON(wordloc, function(json) {
         let container = document.getElementById("container");
         let answers = document.createElement("div");
         answers.id = "answers";
-        data = json[getRandomInt(1, 3001)];
+        data = json[getRandomInt(1, json.length)];
         keys = shuffle([
-            json[getRandomInt(1, 3001)],
-            json[getRandomInt(1, 3001)],
-            json[getRandomInt(1, 3001)],
-            json[getRandomInt(1, 3001)],
+            json[getRandomInt(1, json.length)],
+            json[getRandomInt(1, json.length)],
+            json[getRandomInt(1, json.length)],
+            json[getRandomInt(1, json.length)],
             data
         ]);
         keys.push({ 뜻: "모릅니다." });

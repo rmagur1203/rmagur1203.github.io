@@ -14,14 +14,13 @@ function LoadWord() {
         let container = document.getElementById("container");
         let answers = document.createElement("div");
         answers.id = "answers";
-        data = json[getRandomInt(1, json.length)];
-        keys = shuffle([
-            json[getRandomInt(1, json.length)],
-            json[getRandomInt(1, json.length)],
-            json[getRandomInt(1, json.length)],
-            json[getRandomInt(1, json.length)],
-            data
-        ]);
+        keys = ArrayRandom(1, json.length, 5);
+        for (var i = 0; i < keys.length; i++) {
+            keys[i] = json[keys[i]];
+        }
+        console.log(keys);
+        data = keys[0];
+        keys = shuffle(keys);
         keys.push({ 뜻: "모릅니다." });
         container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="[${data.등급}] ${data.뜻}">${data.단어}</div>`;
         container.appendChild(answers);
@@ -43,6 +42,16 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function ArrayRandom(min, max, count) {
+    var list = [];
+    while (list.length != count) {
+        var rndkey = getRandomInt(min, max);
+        if (!list.includes(rndkey))
+            list.push(rndkey);
+    }
+    return list;
 }
 
 function shuffle(a) {

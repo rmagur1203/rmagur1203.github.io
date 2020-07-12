@@ -18,7 +18,6 @@ function LoadWord() {
         for (var i = 0; i < keys.length; i++) {
             keys[i] = json[keys[i]];
         }
-        console.log(keys);
         data = keys[0];
         keys = shuffle(keys);
         keys.push({ 뜻: "모릅니다." });

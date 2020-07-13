@@ -7,7 +7,7 @@ $(document).ready(LoadWord);
 const URLSearch = new URLSearchParams(window.location.search);
 wordloc = URLSearch.get("words");
 if (wordloc == null)
-    wordloc = "words.json";
+    wordloc = "words/words.json";
 
 function LoadWord() {
     $.getJSON(wordloc, function(json) {

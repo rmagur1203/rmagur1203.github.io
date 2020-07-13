@@ -11,14 +11,17 @@ if (wordloc == null)
 
 function LoadWord() {
     $.getJSON(wordloc, function(json) {
+        wordlist = json;
         let container = document.getElementById("container");
         let answers = document.createElement("div");
         answers.id = "answers";
         keys = ArrayRandom(1, json.length, 5);
+        var dataindex = keys[0];
         for (var i = 0; i < keys.length; i++) {
             keys[i] = $.extend({}, json[keys[i]]);
         }
         data = keys[0];
+        data.index = dataindex;
         keys = shuffle(keys);
         keys.push({
             뜻: [{
@@ -30,14 +33,14 @@ function LoadWord() {
         //console.log(keys);
         //var datarndk = getRandomInt(0, data.뜻.length);
         //console.log(data.뜻[0]);
-        var datatypeen = data.뜻[0].typeen == null ? "" : data.뜻[0].typeen.substring(0, 1).toLowerCase();
-        container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="${datatypeen + ". " + data.뜻[0].value}">${data.단어}</div>`;
+        var datatypeen = data.뜻[0].typeen == "" ? "" : (data.뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
+        container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="${datatypeen + data.뜻[0].value}">${data.단어}</div>`;
         container.appendChild(answers);
         let answerhtml = "";
         answerhtml = "<center>";
         for (let i = 0; i < keys.length; i++) {
             var means = "";
-            var typeen = keys[i].뜻[0].typeen == null ? "" : (keys[i].뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
+            var typeen = keys[i].뜻[0].typeen == "" ? "" : (keys[i].뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
             means = typeen + keys[i].뜻[0].value;
             /*
             var rndk = getRandomInt(0, keys[i].뜻.length);
@@ -99,7 +102,9 @@ function shuffle(a) {
 function checkAnswer(sender) {
     if (sender.classList.contains("disable")) return;
     let id = sender.id;
-    console.log(id);
+    //console.log(id);
+    console.clear();
+    writeMeans(wordlist[data.index].뜻);
     if (data == keys[id]) {
         answerCount++;
         $.cookie("score", answerCount);
@@ -118,4 +123,10 @@ function checkAnswer(sender) {
         $('[data-toggle="tooltip"]').tooltip("hide");
         LoadWord();
     }, 4000);
+}
+
+function writeMeans(means) {
+    for (var i = 0; i < means.length; i++) {
+        console.log(means[i].typeko, means[i].value);
+    }
 }

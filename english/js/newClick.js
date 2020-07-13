@@ -1,4 +1,7 @@
 onspeech = true;
+settings = {
+    readkr: false
+}
 
 answerCount = $.cookie("score");
 if (answerCount == undefined) answerCount = 0;
@@ -104,6 +107,7 @@ function checkAnswer(sender) {
     let id = sender.id;
     //console.log(id);
     console.clear();
+    console.log(wordlist[data.index]);
     writeMeans(wordlist[data.index].뜻);
     if (data == keys[id]) {
         answerCount++;
@@ -111,7 +115,7 @@ function checkAnswer(sender) {
     } else {
         answerCount = 0;
     }
-    if (onspeech)
+    if (onspeech && settings.readkr)
         speech(data.뜻);
     $('[data-toggle="tooltip"]').tooltip("show");
     let container = document.getElementById("container");

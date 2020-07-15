@@ -1,4 +1,7 @@
-onspeech = false;
+settings = {
+    readword: true,
+    readmean: false
+}
 
 answerCount = $.cookie("score");
 if (answerCount == undefined) answerCount = 0;
@@ -32,8 +35,8 @@ function LoadWord() {
         }
         answers.innerHTML = answerhtml + "</center>";
         container.innerHTML += `<div id="Correct">${answerCount}</div>`;
-        if (onspeech)
-            speech(data.단어, { lang: "en-US" });
+        if (settings.readword)
+            speech(data.단어.split(' ')[0], { lang: "zh-CN" });
     });
 }
 
@@ -71,8 +74,8 @@ function checkAnswer(sender) {
     } else {
         answerCount = 0;
     }
-    if (onspeech)
-        speech(data.뜻);
+    if (settings.readmean)
+        speech(data.뜻, { lang: "ko-KR" });
     $('[data-toggle="tooltip"]').tooltip("show");
     let container = document.getElementById("container");
     container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");

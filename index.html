@@ -39,11 +39,13 @@
         </ul>
     </nav>
     <div class="container">
-        <h1>쉽게 공부하기</h1>
-        <p>게임을 통해서 쉽게 공부를 해 보세요!</p>
-        <a href="/english/index.html">영어 단어 맞추기</a>
+        <div class="jumbotron">
+            <h1>쉽게 공부하기</h1>
+            <p>게임을 통해서 쉽게 공부를 해 보세요!</p>
+            <a href="/english/index.html">영어 단어 맞추기</a>
+        </div>
         <hr/>
-        <h2>Developers</h2>
+        <h3>Developers</h3>
         <div class="card" style="width:20rem;margin:20px 0 24px 0">
             <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="image" style="width:100%">
             <div class="card-body">
@@ -51,6 +53,40 @@
                 <p class="card-text">Main Designer</p>
                 <a href="javascript:void(0)" class="btn btn-primary">See Profile</a>
             </div>
+        </div>
+        <h3>단어목록</h3>
+        <div>
+            <h4>영어</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>단어</th>
+                        <th>뜻</th>
+                    </tr>
+                </thead>
+                <tbody id="tengbody">
+                </tbody>
+            </table>
+            <script>
+                $.getJSON('./english/words/words.json', function(json) {
+                    var tbody = document.getElementById('tengbody');
+                    for (var i = 0; i < json.length; i++) {
+                        var tr = document.createElement('tr');
+                        var item = json[i];
+                        tr.innerHTML += `<td>${item.단어}</td>`;
+                        var str = "<td>";
+                        str += "<select>";
+                        for (var j = 0; j < item.뜻.length; j++) {
+                            var jtem = item.뜻[j];
+                            str += `<option>[${jtem.typeko}] ${jtem.value}</option>`;
+                        }
+                        str += "</select>";
+                        str += "</td>";
+                        tr.innerHTML += str;
+                        tbody.appendChild(tr);
+                    }
+                });
+            </script>
         </div>
     </div>
 </body>

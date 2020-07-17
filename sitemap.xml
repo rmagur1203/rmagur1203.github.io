@@ -9,72 +9,157 @@
 
 <url>
   <loc>https://rmagur1203.github.io/</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/index.html</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://rmagur1203.github.io/chinese/index.html</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=english/words/words.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/3classw.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/index.html</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/english/click.html</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/1000words.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/2000words.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/3000words.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/4000words.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/5000words.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words2.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words3.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words18.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words19.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words20.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words21.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://rmagur1203.github.io/english/click.html?words=words/words22.json</loc>
-  <lastmod>2020-07-14T03:50:38+00:00</lastmod>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/chinese/click.html?words=words/level_6.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/chinese/click.html?words=words/level_5.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/chinese/click.html?words=words/level_4.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/chinese/click.html?words=words/level_3.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/chinese/click.html?words=words/level_2.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/chinese/click.html?words=words/level_1.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/level_6.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/level_5.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/level_4.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/level_3.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/level_2.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rmagur1203.github.io/frames/engdict.html?words=chinese/words/level_1.json</loc>
+  <lastmod>2020-07-17T11:55:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

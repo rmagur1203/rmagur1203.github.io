@@ -33,14 +33,14 @@ function LoadWord() {
                 value: "모릅니다."
             }]
         });
-        var datatypeen = data.뜻[0].typeen == "" ? "" : (data.뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
+        var datatypeen = isNull(data.뜻[0].typeen) ? "" : (data.뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
         container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="${datatypeen + data.뜻[0].value}">${data.단어}</div>`;
         container.appendChild(answers);
         let answerhtml = "";
         answerhtml = "<center>";
         for (let i = 0; i < keys.length; i++) {
             var means = "";
-            var typeen = keys[i].뜻[0].typeen == "" ? "" : (keys[i].뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
+            var typeen = isNull(keys[i].뜻[0].typeen) ? "" : (keys[i].뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
             means = typeen + keys[i].뜻[0].value;
             answerhtml += "<br/>";
             answerhtml += "<br/>";
@@ -108,4 +108,8 @@ function writeMeans(means) {
     for (var i = 0; i < means.length; i++) {
         console.log(means[i].typeko, means[i].value);
     }
+}
+
+function isNull(str) {
+    return (str == "" || str == null || str == undefined);
 }

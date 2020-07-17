@@ -1,0 +1,7 @@
+네이버 중국어 HSK 등급별 단어
+https://zh.dict.naver.com/api/zhko/getHskInfoList?level=6&page=1&pageSize=100
+
+네이버 사전검색
+https://zh.dict.naver.com/api3/zhko/search?query=%E4%BD%A0
+https://en.dict.naver.com/api3/zhko/search?query=hell
+https://ko.dict.naver.com/api3/zhko/search?query=안녕

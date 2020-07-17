@@ -46,7 +46,18 @@
             <a href="/english/index.html">영어 단어 맞추기</a>
         </div>
         <hr/>
-        <h3>단어목록</h3>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" value="등록된 단어 목록" style="background-color: #ffffff;" readonly>
+            <div class="input-group-append">
+                <button class="btn btn-success" type="submit" id="loaddict">불러오기</button>
+                <script>
+                    $('#loaddict').click(function() {
+                        document.getElementById("en").src = "./frames/engdict.html?words=english/words/words.json";
+                        document.getElementById("ch").src = "./frames/engdict.html?words=chinese/words/3classw.json";
+                    });
+                </script>
+            </div>
+        </div>
         <div id="accordion">
             <div class="card">
                 <div class="card-header">
@@ -54,7 +65,7 @@
                 </div>
                 <div id="collapse6" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <iframe id="en" class="dict" src="./frames/engdict.html?words=english/words/words.json"></iframe>
+                        <iframe id="en" class="dict" src=""></iframe>
                     </div>
                 </div>
             </div>
@@ -64,7 +75,7 @@
                 </div>
                 <div id="collapse5" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <iframe id="ch" class="dict" src="./frames/engdict.html?words=chinese/words/3classw.json"></iframe>
+                        <iframe id="ch" class="dict" src=""></iframe>
                     </div>
                 </div>
             </div>

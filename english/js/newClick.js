@@ -33,8 +33,7 @@ function LoadWord() {
                 value: "모릅니다."
             }]
         });
-        var datatypeen = isNull(data.뜻[0].typeen) ? "" : (data.뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
-        container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="${datatypeen + data.뜻[0].value}">${data.단어}</div>`;
+        container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="">${data.단어}</div>`;
         container.appendChild(answers);
         let answerhtml = "";
         answerhtml = "<center>";
@@ -92,6 +91,8 @@ function checkAnswer(sender) {
     }
     if (onspeech && settings.readkr)
         speech(data.뜻);
+    var datatypeen = isNull(data.뜻[0].typeen) ? "" : (data.뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
+    $('[data-toggle="tooltip"]').attr("title", datatypeen + data.뜻[0].value);
     $('[data-toggle="tooltip"]').tooltip("show");
     let container = document.getElementById("container");
     container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");

@@ -77,7 +77,7 @@ function shuffle(a) {
     return a;
 }
 
-function checkAnswer(sender) {
+async function checkAnswer(sender) {
     if (sender.classList.contains("disable")) return;
     let id = sender.id;
     console.clear();
@@ -91,8 +91,7 @@ function checkAnswer(sender) {
     }
     if (onspeech && settings.readkr)
         speech(data.뜻);
-    var datatypeen = isNull(data.뜻[0].typeen) ? "" : (data.뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
-    $('[data-toggle="tooltip"]').attr("title", datatypeen + data.뜻[0].value);
+    $('[data-toggle="tooltip"]').attr("title", data.뜻);
     $('[data-toggle="tooltip"]').tooltip("show");
     let container = document.getElementById("container");
     container.style.backgroundColor = (data == keys[id] ? "#28a745" : "#dc3545");

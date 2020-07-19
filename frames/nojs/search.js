@@ -8,7 +8,7 @@ $(document).ready(function() {
     $("button").click(function() {
         Search();
     });
-    $(".search input[type=text]").keypress(function(e) {
+    $("input[type=text]").keypress(function(e) {
         if (e.keyCode == 13) {
             Search();
         }

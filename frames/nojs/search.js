@@ -5,7 +5,7 @@ $(document).ready(function() {
             $(this).toggle($(this).children().first().text().toLowerCase().indexOf(value) > -1)
         });
     }
-    $("button").click(function() {
+    $("button[type=button]").click(function() {
         Search();
     });
     $("input[type=text]").keypress(function(e) {

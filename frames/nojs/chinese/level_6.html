@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../js/dict.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script data-ad-client="ca-pub-9183193300128328" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/frames/nojs/search.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907749-1"></script>
     <script>
@@ -9746,16 +9747,6 @@
             </tr>
         </tbody>
     </table>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                var value = $("input").val().toLowerCase();
-                $("tbody tr").filter(function() {
-                    $(this).toggle($(this).children().first().text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

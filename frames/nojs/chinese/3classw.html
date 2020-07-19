@@ -16,6 +16,7 @@
     <script type="text/javascript" src="https://adservice.google.co.kr/adsid/integrator.js?domain="></script>
     <link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=" as="script">
     <script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain="></script>
+    <script src="/frames/nojs/search.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907749-1"></script>
     <script>
@@ -1228,15 +1229,6 @@
             </tr>
         </tbody>
     </table>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                var value = $("input").val().toLowerCase();
-                $("tbody tr").filter(function() {
-                    $(this).toggle($(this).children().first().text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
 </body>
+
 </html>

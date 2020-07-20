@@ -82,12 +82,12 @@
                         <button class="btn btn-success" type="submit" id="loaddict1">불러오기</button>
                         <script>
                             $('#loaddict1').click(function() {
-                                document.getElementById("ch6").src = "../nojs/chinese/level_6.html";
-                                document.getElementById("ch5").src = "../nojs/chinese/level_5.html";
-                                document.getElementById("ch4").src = "../nojs/chinese/level_4.html";
-                                document.getElementById("ch3").src = "../nojs/chinese/level_3.html";
-                                document.getElementById("ch2").src = "../nojs/chinese/level_2.html";
-                                document.getElementById("ch1").src = "../nojs/chinese/level_1.html";
+                                document.getElementById("ch6").src = "/frames/nojs/chinese/level_6.html";
+                                document.getElementById("ch5").src = "/frames/nojs/chinese/level_5.html";
+                                document.getElementById("ch4").src = "/frames/nojs/chinese/level_4.html";
+                                document.getElementById("ch3").src = "/frames/nojs/chinese/level_3.html";
+                                document.getElementById("ch2").src = "/frames/nojs/chinese/level_2.html";
+                                document.getElementById("ch1").src = "/frames/nojs/chinese/level_1.html";
                             });
                         </script>
                         <div id="accordion">
@@ -97,7 +97,7 @@
                                 </div>
                                 <div id="collapse1-6" class="collapse">
                                     <div class="card-body">
-                                        <iframe id="ch6" class="dict" src="../loadbutton.html"></iframe>
+                                        <iframe id="ch6" class="dict" src="/frames/loadbutton.html"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                                 </div>
                                 <div id="collapse1-5" class="collapse">
                                     <div class="card-body">
-                                        <iframe id="ch5" class="dict" src="../loadbutton.html"></iframe>
+                                        <iframe id="ch5" class="dict" src="/frames/loadbutton.html"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                                 </div>
                                 <div id="collapse1-4" class="collapse">
                                     <div class="card-body">
-                                        <iframe id="ch4" class="dict" src="../loadbutton.html"></iframe>
+                                        <iframe id="ch4" class="dict" src="/frames/loadbutton.html"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div id="collapse1-3" class="collapse">
                                     <div class="card-body">
-                                        <iframe id="ch3" class="dict" src="../loadbutton.html"></iframe>
+                                        <iframe id="ch3" class="dict" src="/frames/loadbutton.html"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div id="collapse1-2" class="collapse">
                                     <div class="card-body">
-                                        <iframe id="ch2" class="dict" src="../loadbutton.html"></iframe>
+                                        <iframe id="ch2" class="dict" src="/frames/loadbutton.html"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +147,7 @@
                                 </div>
                                 <div id="collapse1-1" class="collapse">
                                     <div class="card-body">
-                                        <iframe id="ch1" class="dict" src="../loadbutton.html"></iframe>
+                                        <iframe id="ch1" class="dict" src="/frames/loadbutton.html"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -164,31 +164,97 @@
                         <button class="btn btn-success" type="submit" id="loaddict2">불러오기</button>
                         <script>
                             $('#loaddict2').click(function() {
-                                document.getElementById("en1").src = "./nojs/english/words.html";
+                                document.getElementById("en1").src = "/frames/nojs/english/words.html";
+                                document.getElementById("en2").src = "/frames/nojs/english/1000words.html";
+                                document.getElementById("en3").src = "/frames/nojs/english/2000words.html";
+                                document.getElementById("en4").src = "/frames/nojs/english/3000words.html";
+                                document.getElementById("en5").src = "/frames/nojs/english/4000words.html";
+                                document.getElementById("en6").src = "/frames/nojs/english/5000words.html";
                             });
                         </script>
-                        <iframe id="en1" class="dict" src="../loadbutton.html"></iframe>
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse1-1">영어 단어 1~5000</a>
+                                </div>
+                                <div id="collapse2-1" class="collapse">
+                                    <div class="card-body">
+                                        <iframe id="en1" class="dict" src="/frames/loadbutton.html"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse2-2">영어 단어 1~1000</a>
+                                </div>
+                                <div id="collapse2-2" class="collapse">
+                                    <div class="card-body">
+                                        <iframe id="en2" class="dict" src="/frames/loadbutton.html"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse2-3">영어 단어 1001~2000</a>
+                                </div>
+                                <div id="collapse2-3" class="collapse">
+                                    <div class="card-body">
+                                        <iframe id="en3" class="dict" src="/frames/loadbutton.html"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse2-4">영어 단어 2001~3000</a>
+                                </div>
+                                <div id="collapse2-4" class="collapse">
+                                    <div class="card-body">
+                                        <iframe id="en4" class="dict" src="/frames/loadbutton.html"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse2-5">영어 단어 3001~4000</a>
+                                </div>
+                                <div id="collapse2-5" class="collapse">
+                                    <div class="card-body">
+                                        <iframe id="en5" class="dict" src="/frames/loadbutton.html"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#collapse2-6">영어 단어 4001~5000</a>
+                                </div>
+                                <div id="collapse2-6" class="collapse">
+                                    <div class="card-body">
+                                        <iframe id="en6" class="dict" src="/frames/loadbutton.html"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <h4>영어</h4>
         <ol>
-            <li><a href="./english/words.html">단어 1~5000</a></li>
-            <li><a href="./english/1000words.html">단어 1~1000</a></li>
-            <li><a href="./english/2000words.html">단어 1001~2000</a></li>
-            <li><a href="./english/3000words.html">단어 2001~3000</a></li>
-            <li><a href="./english/4000words.html">단어 3001~4000</a></li>
-            <li><a href="./english/5000words.html">단어 4001~5000</a></li>
+            <li><a href="/frames/nojs/english/words.html">단어 1~5000</a></li>
+            <li><a href="/frames/nojs/english/1000words.html">단어 1~1000</a></li>
+            <li><a href="/frames/nojs/english/2000words.html">단어 1001~2000</a></li>
+            <li><a href="/frames/nojs/english/3000words.html">단어 2001~3000</a></li>
+            <li><a href="/frames/nojs/english/4000words.html">단어 3001~4000</a></li>
+            <li><a href="/frames/nojs/english/5000words.html">단어 4001~5000</a></li>
         </ol>
         <h4>중국어</h4>
         <ol>
-            <li><a href="./chinese/level_6.html">단어 6급</a></li>
-            <li><a href="./chinese/level_5.html">단어 5급</a></li>
-            <li><a href="./chinese/level_4.html">단어 4급</a></li>
-            <li><a href="./chinese/level_3.html">단어 3급</a></li>
-            <li><a href="./chinese/level_2.html">단어 2급</a></li>
-            <li><a href="./chinese/level_1.html">단어 1급</a></li>
+            <li><a href="/frames/nojs/chinese/level_6.html">단어 6급</a></li>
+            <li><a href="/frames/nojs/chinese/level_5.html">단어 5급</a></li>
+            <li><a href="/frames/nojs/chinese/level_4.html">단어 4급</a></li>
+            <li><a href="/frames/nojs/chinese/level_3.html">단어 3급</a></li>
+            <li><a href="/frames/nojs/chinese/level_2.html">단어 2급</a></li>
+            <li><a href="/frames/nojs/chinese/level_1.html">단어 1급</a></li>
         </ol>
     </div>
 </body>

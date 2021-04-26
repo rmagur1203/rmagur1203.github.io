@@ -1,0 +1,28 @@
+<textarea id="ta">
+
+</textarea>
+<script>
+    function getType(type) {
+        switch (type) {
+            case "n": return "명사";
+            case "v": return "동사";
+            case "a": return "형용사";
+            case "ad": return "부사";
+            case "p": return "전치사";
+            case "c": return "접속사";
+            case "i": return "숙어";
+            default: return null;
+        }
+    }
+    arr = []
+    for (ln of lines)
+        if (ln) {
+            let items = ln.substr(2).split(" : ");
+            let word = items[0];
+            let means = items[1].split(") ");
+            let type = means[0].substr(1);
+            let mean = means[1]
+            item = { "단어": word, "뜻": [{ "typeko": getType(type), "typeen": type, "value": mean }] }
+            arr.push(item)
+        }
+</script>

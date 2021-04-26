@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>단어맞추기</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="영어 단어 게임으로 빠르고 쉽게 외워보기">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="영어 단어" />
+    <meta property="og:description" content="영어 단어 게임으로 빠르고 쉽게 외워보기" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko-KR" />
+    <meta property="og:url" content="https://rmagur1203.github.io/english/click.html" />
+    <link rel="canonical" href="https://rmagur1203.github.io/english/click.html">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/jquery/cookie/jquery.cookie.js"></script>
+    <script src="../jquery/cookie/jquery.cookie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script data-ad-client="ca-pub-9183193300128328" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+        .button {
+            display: inline-block;
+            border: 3px solid white;
+            border-radius: 5px;
+            width: 400px;
+            text-align: center;
+            text-decoration: none;
+            padding: 30px 0px;
+            outline: none;
+            background-color: #fff;
+            font-size: 20px;
+            color: black;
+        }
+        
+        .button:hover {
+            border: 3px solid transparent;
+            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+            border-image-slice: 1;
+            color: black;
+        }
+        
+        .disable {
+            background-color: #b4b4b4;
+            border: 3px solid #b4b4b4;
+        }
+        
+        #Correct {
+            line-height: 120px;
+            font-size: 70px;
+            text-align: center;
+        }
+        
+        #container {
+            padding: 20;
+            background-color: F0F0F0;
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        #wordCard {
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+            background-color: rgb(66, 66, 66)!important;
+            line-height: 1!important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/sn1.js"></script>
+    <script src="js/speech.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907749-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-172907749-1');
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="wordCard">로딩중입니다...</div>
+        <div id="answers">
+            <center id="buttons">
+                <br/>
+                <br/>
+                <a class="button" onclick="checkAnswer(this);">선택1</a>
+                <br/>
+                <br/>
+                <a class="button" onclick="checkAnswer(this);">선택2</a>
+                <br/>
+                <br/>
+                <a class="button" onclick="checkAnswer(this);">선택3</a>
+                <br/>
+                <br/>
+                <a class="button" onclick="checkAnswer(this);">선택4</a>
+                <br/>
+                <br/>
+                <a class="button" onclick="checkAnswer(this);">선택5</a>
+                <br/>
+                <br/>
+                <a class="button" onclick="checkAnswer(this);">선택6</a>
+            </center>
+        </div>
+        <div id="Correct">52</div>
+    </div>
+</body>
+
+</html>

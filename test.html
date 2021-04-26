@@ -19,10 +19,19 @@
         if (ln) {
             let items = ln.substr(2).split(" : ");
             let word = items[0];
-            let means = items[1].split(") ");
-            let type = means[0].substr(1);
-            let mean = means[1]
-            item = { "단어": word, "뜻": [{ "typeko": getType(type), "typeen": type, "value": mean }] }
+            let means = items[1].split(" / ");
+            let meanlist = [];
+            for (mean of means) {
+                let sv = mean.split(") ")
+                let type = sv[0].substr(1);
+                let value = sv[1];
+                meanlist.push({
+                    "typeko": getType(type),
+                    "typeen": type,
+                    "value": value
+                });
+            }
+            item = { "단어": word, "뜻": meanlist }
             arr.push(item)
         }
 </script>

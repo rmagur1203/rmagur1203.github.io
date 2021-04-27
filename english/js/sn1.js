@@ -85,6 +85,7 @@ async function checkAnswer(sender) {
     if (data == keys[id]) {
         answerCount++;
         $.cookie("score", answerCount);
+        wordlist.splice(data.index);
     } else {
         answerCount = 0;
     }

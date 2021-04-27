@@ -5,49 +5,51 @@ settings = {
 
 answerCount = $.cookie("score");
 if (answerCount == undefined) answerCount = 0;
-$(document).ready(LoadWord);
+$(document).ready(() => {
+    $.getJSON(wordloc, function(json) {
+        wordlist = json;
+        LoadWord();
+    });
+});
 
 wordloc = "words/sn1.json";
 
 function LoadWord() {
-    $.getJSON(wordloc, function(json) {
-        wordlist = json;
-        let container = document.getElementById("container");
-        let answers = document.createElement("div");
-        answers.id = "answers";
-        keys = ArrayRandom(1, json.length, 5);
-        var dataindex = keys[0];
-        for (var i = 0; i < keys.length; i++) {
-            keys[i] = $.extend({}, json[keys[i]]);
-        }
-        data = keys[0];
-        data.index = dataindex;
-        keys = shuffle(keys);
-        keys.push({
-            뜻: [{
-                typeko: "",
-                typeen: "",
-                value: "모릅니다."
-            }]
-        });
-        container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="">${data.단어}</div>`;
-        container.appendChild(answers);
-        let answerhtml = "";
-        answerhtml = "<center>";
-        for (let i = 0; i < keys.length; i++) {
-            var means = "";
-            var typeen = isNull(keys[i].뜻[0].typeen) ? "" : (keys[i].뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
-            means = typeen + keys[i].뜻[0].value;
-            answerhtml += "<br/>";
-            answerhtml += "<br/>";
-            answerhtml += `<a class="button" id="${i}" onclick="checkAnswer(this);">${means}</a>`;
-            keys[i].뜻 = means;
-        }
-        answers.innerHTML = answerhtml + "</center>";
-        container.innerHTML += `<div id="Correct">${answerCount}</div>`;
-        if (onspeech)
-            speech(data.단어, { lang: "en-US" });
+    let container = document.getElementById("container");
+    let answers = document.createElement("div");
+    answers.id = "answers";
+    keys = ArrayRandom(1, wordlist.length, 5);
+    var dataindex = keys[0];
+    for (var i = 0; i < keys.length; i++) {
+        keys[i] = $.extend({}, wordlist[keys[i]]);
+    }
+    data = keys[0];
+    data.index = dataindex;
+    keys = shuffle(keys);
+    keys.push({
+        뜻: [{
+            typeko: "",
+            typeen: "",
+            value: "모릅니다."
+        }]
     });
+    container.innerHTML = `<div id="wordCard" data-toggle="tooltip" title="">${data.단어}</div>`;
+    container.appendChild(answers);
+    let answerhtml = "";
+    answerhtml = "<center>";
+    for (let i = 0; i < keys.length; i++) {
+        var means = "";
+        var typeen = isNull(keys[i].뜻[0].typeen) ? "" : (keys[i].뜻[0].typeen.substring(0, 1).toLowerCase() + ". ");
+        means = typeen + keys[i].뜻[0].value;
+        answerhtml += "<br/>";
+        answerhtml += "<br/>";
+        answerhtml += `<a class="button" id="${i}" onclick="checkAnswer(this);">${means}</a>`;
+        keys[i].뜻 = means;
+    }
+    answers.innerHTML = answerhtml + "</center>";
+    container.innerHTML += `<div id="Correct">${answerCount}</div>`;
+    if (onspeech)
+        speech(data.단어, { lang: "en-US" });
 }
 
 function getRandomInt(min, max) {

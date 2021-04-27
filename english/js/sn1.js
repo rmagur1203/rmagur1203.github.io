@@ -15,6 +15,11 @@ $(document).ready(() => {
 wordloc = "words/sn1.json";
 
 function LoadWord() {
+    if (wordlist.length <= 0){
+        alert("모든 문제를 맞추셨습니다.");
+        window.location = "/";
+        return;
+    }
     let container = document.getElementById("container");
     let answers = document.createElement("div");
     answers.id = "answers";
